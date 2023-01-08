@@ -1,6 +1,6 @@
 package br.com.dcastrobianca.snakegame.model;
 
-public class Cell {
+public class Cell{
 	private int x;
     private int y;
     private CellType type;
@@ -25,6 +25,22 @@ public class Cell {
 
     public void setType(CellType type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return type.getVisual();
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.parseInt(String.valueOf(x)+String.valueOf(y));
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Cell c = (Cell) obj;
+        return this.hashCode()==c.hashCode();
     }
 
 

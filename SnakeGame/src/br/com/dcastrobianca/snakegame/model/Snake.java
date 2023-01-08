@@ -13,8 +13,8 @@ public class Snake {
         if(size<2){
             throw new RuntimeException("minimal size of the snake is 2");
         }
-        for (int i = 0; i < size; i++) {
-            nodes.add(new Cell(0, i, CellType.snake));
+        for (int i = size; i > 0; i--) {
+            nodes.add(new Cell(0, i-1, CellType.snake));
         }
     }
 
